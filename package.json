@@ -1,0 +1,19 @@
+{
+  "name": "avanthika.collections",
+  "version": "1.0.0",
+  "description": "MEAN stack web app for viewing products.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajashekarb-dev/avanthika.collections.git"
+  },
+  "author": "Raja Shekar, Sneha Mahajan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajashekarb-dev/avanthika.collections/issues"
+  },
+  "homepage": "https://github.com/rajashekarb-dev/avanthika.collections#readme"
+}
