@@ -14,7 +14,7 @@ app.set('port', port);
 //  Create server
 const server = http.createServer(app);
 
-server.listen(3000);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 

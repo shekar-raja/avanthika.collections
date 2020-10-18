@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
+const mongoDB = require('./app/config/mongoDB');
 
 // Create a express app
 const app = express();
@@ -11,9 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get('/', (req, res) => {
-    res.send('Avanthika collections application is running');
-});
+// Serving static files
+app.use('/', express.static('public/dist/avanthika-collections'));
+
 
 module.exports = app;
