@@ -19,5 +19,7 @@ app.use(router);
 
 // Serving static files
 app.use('/', express.static('public/dist/avanthika-collections'));
-
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve('public/dist/avanthika-collections/index.html'), { req });
+});
 module.exports = app;

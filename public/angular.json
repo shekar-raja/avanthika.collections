@@ -19,7 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/avanthika.png",
               "src/assets"
             ],
             "styles": [
@@ -76,7 +76,7 @@
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              "src/avanthika.png",
               "src/assets"
             ]
           }
@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "public"
+  "defaultProject": "public",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
