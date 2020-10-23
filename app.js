@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoDB = require('./app/config/mongoDB');
 const router = require('./app/routes/app.routes');
+
 // Create a express app
 const app = express();
 
@@ -22,4 +23,5 @@ app.use('/', express.static('public/dist/avanthika-collections'));
 app.get('*', (req, res) => {
     res.sendFile(path.resolve('public/dist/avanthika-collections/index.html'), { req });
 });
+
 module.exports = app;

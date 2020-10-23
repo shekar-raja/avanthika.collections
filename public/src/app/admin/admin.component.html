@@ -1,3 +1,38 @@
-<p>
-  admin works!
-</p>
+<mat-card>
+  <!-- <div>
+    <img src="../../avanthika.png" class="avatar"/>
+  </div> -->
+  <mat-card-title>AVANTHIKA COLLECTIONS</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username" formControlName="username" autocomplete="off" (keydown)="enableLoginButton()">
+          <mat-error *ngIf="loginForm.get('username').hasError('required')">This is a mandatory field.</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password" autocomplete="off" (keydown)="enableLoginButton()">
+          <mat-error *ngIf="loginForm.get('password').hasError('required')">This is a mandatory field.</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <div class="button">
+        <button mat-raised-button color="accent" [disabled]="!enableLogin">Login</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- Loading div starts -->
+<div id="loaderDiv" *ngIf="loading">
+  <img src="../../assets/loader-gif.gif" class="loader" />
+</div>
+<!-- Loading div ends -->

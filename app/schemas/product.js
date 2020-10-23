@@ -9,7 +9,7 @@ const product = new Schema({
     description: {
         type: String
     },
-    price: {
+    offerPrice: {
         type: Number,
         required: true
     },
@@ -23,6 +23,10 @@ const product = new Schema({
     },
     location: {
         type: String
+    },
+    actualPrice: {
+        type: Number,
+        required: true
     }
 });
 
