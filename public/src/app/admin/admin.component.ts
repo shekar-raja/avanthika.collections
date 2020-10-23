@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from "./admin.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -20,7 +21,8 @@ export class AdminComponent implements OnInit {
   @Input() error: string | null;
   
   constructor(
-    private adminService: AdminService
+    private adminService: AdminService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,7 +31,6 @@ export class AdminComponent implements OnInit {
   // login method
   login() {
     this.loading = true;
-    
     // API call to get admin details
     this.adminService.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value).subscribe((result) => {
       setTimeout(() => {
@@ -37,7 +38,9 @@ export class AdminComponent implements OnInit {
         this.error = "";
         if (result['result']) {
           if (result['data'].length > 0) {
+            localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('admin', result['data'][0]['_id']);
+            this.router.navigateByUrl('/adminpage');
           } else {
             this.error = "User not found";
           }
@@ -50,10 +53,8 @@ export class AdminComponent implements OnInit {
 
   enableLoginButton() {
     if ((this.loginForm.controls.username.value !== "") && (this.loginForm.controls.password.value !== "")) {
-      console.log("Got data");
       this.enableLogin = true;
     } else {
-      console.log("did not get data");
       this.enableLogin = false;
     }
   }

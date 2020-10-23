@@ -21,7 +21,7 @@ adminController.createAdmin = (req, res, next) => {
                 message: document
             })
         }
-    })
+    });
 };
 
 adminController.getAdmin = (req, res) => {

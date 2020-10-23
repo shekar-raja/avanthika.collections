@@ -27,6 +27,10 @@ const product = new Schema({
     actualPrice: {
         type: Number,
         required: true
+    },
+    productUrls: {
+        type: Array,
+        required: true
     }
 });
 

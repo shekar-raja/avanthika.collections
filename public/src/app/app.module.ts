@@ -8,16 +8,22 @@ import { BrowserAnimationsModule }                    from '@angular/platform-br
 import { MatInputModule }                             from '@angular/material/input';
 import { MatCardModule }                              from '@angular/material/card';
 import { MatButtonModule }                            from '@angular/material/button';
-import { HttpClientModule }        from "@angular/common/http";
+import { HttpClientModule }                           from "@angular/common/http";
+import { MatToolbarModule }                           from '@angular/material/toolbar';
+import { MatDialogModule }                            from '@angular/material/dialog';
 
 import { AppComponent }                               from './app.component';
 import { AdminComponent }                             from './admin/admin.component';
 import { AdminService } from "./admin/admin.service";
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [			
     AppComponent,
-    AdminComponent
+    AdminComponent,
+      AdminPageComponent,
+      AdminHeaderComponent
    ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { AdminService } from "./admin/admin.service";
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatDialogModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },

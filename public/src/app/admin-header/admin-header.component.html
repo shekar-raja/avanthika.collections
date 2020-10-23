@@ -1,0 +1,39 @@
+<header>
+  <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container">
+      <div class="nav-header">
+        <img [routerLink]="['/adminpage']" src="../../avanthika.png" height="55px" style="cursor: pointer; outline: none;"/>
+        <a class="navbar-brand">          
+          <mat-toolbar [routerLink]="['/adminpage']" style="outline: none; background-color: #FFF; cursor: pointer;">
+            <span>Avanthika Collections</span>
+          </mat-toolbar>
+        </a>
+      </div>
+      <ul>
+        <li class="p-10 phone-dispaly border-left" (click)="openDialog()">
+          <svg style="cursor: pointer;" width="24" height="24" viewBox="0 0 24 24" fill="#475F7B">
+            <path d="M13 16L18 12 13 8 13 11 4 11 4 13 13 13z" />
+            <path
+              d="M20,3h-9C9.897,3,9,3.897,9,5v4h2V5h9v14h-9v-4H9v4c0,1.103,0.897,2,2,2h9c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z" />
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<ng-template #myTemplate>
+  <div class="confirm-modal-body text-center p-30">
+    <h2 style="font-size: 21px;">Do you want to Log out?</h2>
+  </div>
+  <div class="modal-footer">
+    <button type="button" mat-raised-button style="outline: none;" [mat-dialog-close]="false">No, Cancel</button>
+    <button type="button" mat-raised-button style="outline: none;" color="primary" (click)="logout()" [mat-dialog-close]="false">Yes, Logout</button>
+  </div>
+</ng-template>
+
+<!-- Loading div starts -->
+<div id="loaderDiv" *ngIf="loading">
+  <img src="../../assets/loader-gif.gif" class="loader" />
+</div>
+<!-- Loading div ends -->
