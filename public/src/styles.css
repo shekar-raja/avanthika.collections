@@ -1,26 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 #loaderDiv {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    background-color: white;
-    opacity: .6;
-    text-align: center;
-    padding-top: 21%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: white;
+  opacity: 0.6;
+  text-align: center;
+  padding-top: 21%;
 }
 
 .loader {
-    position: fixed;
-    left: 43%;
-    top: 31%;
-    margin-left: -32px;
-    margin-top: -32px;
-    display: block;
-    overflow: hidden !important;
-    width: 250px;
+  left: 43%;
+  top: 31%;
+  margin-left: -32px;
+  margin-top: -32px;
+  display: block;
+  overflow: hidden !important;
+  width: 250px;
+  display: inline-flex;
+  flex-flow: row wrap;
 }

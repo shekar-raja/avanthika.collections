@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :host {
   display: flex;
   justify-content: center;
@@ -27,6 +32,11 @@ mat-card-content {
   justify-content: center;
 }
 
+.main-container {
+  display: inline-flex;
+  flex-flow: row wrap;
+  margin-top: 6.5%;
+}
 .mat-card {
   border: 1px solid black;
 }
@@ -39,8 +49,10 @@ mat-card-content {
   top: -50px;
   left: 111px;
   border: 1px solid;
+  background: white;
 }
 
-.mat-card-subtitle:not(:first-child), .mat-card-title:not(:first-child) {
+.mat-card-subtitle:not(:first-child),
+.mat-card-title:not(:first-child) {
   margin-top: 27px;
 }
