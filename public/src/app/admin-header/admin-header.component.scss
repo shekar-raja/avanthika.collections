@@ -1,0 +1,37 @@
+.navbar.navbar-default {
+	background:#FFF;
+	min-height:72px;
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.1);
+    padding: 5px 0 0 0;
+    .navbar-header {
+        .navbar-brand {
+            padding:2px 0 0;
+            width:194px;
+
+            .m-show-desktop {
+                display:none;
+            }
+    }
+    }
+}
+
+.mat-raised-button.mat-button-base {
+    border: 1px solid #E0E0E0;
+}
+
+.mat-raised-button.mat-primary {
+    background-color: #FFAA23;
+    font-weight: 600;
+    color: #333333;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+}
