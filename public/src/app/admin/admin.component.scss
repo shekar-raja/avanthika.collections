@@ -35,10 +35,10 @@ mat-card-content {
 .main-container {
   display: inline-flex;
   flex-flow: row wrap;
-  margin-top: 6.5%;
+  margin-top: 6%;
 }
 .mat-card {
-  border: 1px solid black;
+  border: 1px solid #cecece;
 }
 
 .avatar {
@@ -48,7 +48,7 @@ mat-card-content {
   position: absolute;
   top: -50px;
   left: 111px;
-  border: 1px solid;
+  border: 1px solid #cecece;
   background: white;
 }
 
