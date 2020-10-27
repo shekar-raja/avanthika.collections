@@ -18,14 +18,14 @@
             Products
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" style="cursor: pointer;">Upload Product</a>
-            <a class="dropdown-item" style="cursor: pointer;">Edit Product</a>
+            <a class="dropdown-item" [routerLink]="['/adminpage/uploadproduct']" style="cursor: pointer;">Upload Product</a>
+            <a class="dropdown-item" [routerLink]="['/adminpage/editproduct/id']" style="cursor: pointer;">Edit Product</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item">Something else here</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Orders</a>
+          <a class="nav-link" [routerLink]="['/adminpage/orders']">Orders</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

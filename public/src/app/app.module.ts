@@ -11,19 +11,26 @@ import { MatButtonModule }                            from '@angular/material/bu
 import { HttpClientModule }                           from "@angular/common/http";
 import { MatToolbarModule }                           from '@angular/material/toolbar';
 import { MatDialogModule }                            from '@angular/material/dialog';
+import { MatSelectModule }                              from '@angular/material/select';
 
 import { AppComponent }                               from './app.component';
 import { AdminComponent }                             from './admin/admin.component';
-import { AdminService } from "./admin/admin.service";
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminService }                               from "./admin/admin.service";
+import { AdminPageComponent }                         from './admin-page/admin-page.component';
+import { AdminHeaderComponent }                       from './admin-header/admin-header.component';
+import { UploadProductComponent }                     from './upload-product/upload-product.component';
+import { EditProductComponent }                       from './edit-product/edit-product.component';
+import { OrdersComponent }                            from './orders/orders.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [						
     AppComponent,
     AdminComponent,
       AdminPageComponent,
-      AdminHeaderComponent
+      AdminHeaderComponent,
+      UploadProductComponent,
+      EditProductComponent,
+      OrdersComponent
    ],
   imports: [
     BrowserModule,
@@ -37,7 +44,8 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
     MatButtonModule,
     HttpClientModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },

@@ -1,0 +1,73 @@
+<app-admin-header></app-admin-header>
+
+<!-- Upload form starts -->
+<mat-card>
+  <mat-card-title>
+    <b>Upload Product</b>
+  </mat-card-title>
+  <form [formGroup]="uploadForm" (ngSubmit)="uploadProduct()">
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Product Name" formControlName="productname" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productname').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Product Description" formControlName="productdescription" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productdescription').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Product Offer Price" formControlName="productofferprice" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productofferprice').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Product Actual Price" formControlName="productactualprice" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productactualprice').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>In stock or not</mat-label>
+        <mat-select [value]="value">
+          <mat-option value="stock">
+            In Stock
+          </mat-option>
+          <mat-option value="outofstock">
+            Out Of Stock
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="uploadForm.get('productstock').hasError('required')">This is a mandatory field.</mat-error>
+    </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Category" formControlName="productactualprice" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productactualprice').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Location" formControlName="productlocation" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('productlocation').hasError('required')">This is a mandatory field.</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-label>Upload Photos</mat-label>
+      <input type="file" (change)='onFileChange($event, i)' accept="audio/*,video/*,image/*" class="inputfile-3 file" name="file"
+						multiple style="display: none;"/>
+      <label class="custom-file-upload">
+          <i class="fa fa-paperclip" aria-hidden="true"></i>
+      </label>
+    </p>
+
+    <button type="submit" class="btn btn-success">
+      Upload Product
+    </button>
+  </form>
+</mat-card>
+<!-- Upload form ends -->
