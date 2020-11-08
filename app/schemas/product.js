@@ -31,6 +31,10 @@ const product = new Schema({
     productUrls: {
         type: Array,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
 });
 
