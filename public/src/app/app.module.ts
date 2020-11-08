@@ -21,16 +21,18 @@ import { AdminHeaderComponent }                       from './admin-header/admin
 import { UploadProductComponent }                     from './upload-product/upload-product.component';
 import { EditProductComponent }                       from './edit-product/edit-product.component';
 import { OrdersComponent }                            from './orders/orders.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
     AdminComponent,
       AdminPageComponent,
       AdminHeaderComponent,
       UploadProductComponent,
       EditProductComponent,
-      OrdersComponent
+      OrdersComponent,
+      ProductsComponent
    ],
   imports: [
     BrowserModule,

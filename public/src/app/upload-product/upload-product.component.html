@@ -33,7 +33,7 @@
     <p>
       <mat-form-field>
         <mat-label>In stock or not</mat-label>
-        <mat-select [value]="value">
+        <mat-select [value]="value" (selectionChange)="changeStockOption($event.value)">
           <mat-option value="stock">
             In Stock
           </mat-option>
@@ -42,12 +42,12 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="uploadForm.get('productstock').hasError('required')">This is a mandatory field.</mat-error>
-    </mat-form-field>
+      </mat-form-field>
     </p>
     <p>
       <mat-form-field>
-        <input type="text" matInput placeholder="Category" formControlName="productactualprice" autocomplete="off">
-        <mat-error *ngIf="uploadForm.get('productactualprice').hasError('required')">This is a mandatory field.</mat-error>
+        <input type="text" matInput placeholder="Category" formControlName="category" autocomplete="off">
+        <mat-error *ngIf="uploadForm.get('category').hasError('required')">This is a mandatory field.</mat-error>
       </mat-form-field>
     </p>
     <p>
@@ -56,18 +56,25 @@
         <mat-error *ngIf="uploadForm.get('productlocation').hasError('required')">This is a mandatory field.</mat-error>
       </mat-form-field>
     </p>
-    <p>
-      <mat-label>Upload Photos</mat-label>
-      <input type="file" (change)='onFileChange($event, i)' accept="audio/*,video/*,image/*" class="inputfile-3 file" name="file"
-						multiple style="display: none;"/>
-      <label class="custom-file-upload">
-          <i class="fa fa-paperclip" aria-hidden="true"></i>
-      </label>
-    </p>
-
-    <button type="submit" class="btn btn-success">
+    <span *ngFor="let file of filesArray" style="margin: 10px;">
+      <img [src]="file" (load)="onLoad($event)" width="60px" height="70px" style="border: 1px solid;"/>
+    </span>
+    <div>
+      <div (click)="fileUpload.click()" style="cursor: pointer;">
+        <mat-label>Upload Photos <i class="fa fa-paperclip" aria-hidden="true"></i></mat-label>
+        <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="uploadFiles($event)" style="display:none;" accept="image/*" multiple>
+      </div>
+    </div>
+    <mat-error *ngIf="error">{{ error }}</mat-error>
+    <button type="submit" class="btn btn-success" [disabled]="enableUpload">
       Upload Product
     </button>
   </form>
 </mat-card>
 <!-- Upload form ends -->
+
+<!-- Loading div starts -->
+<div id="loaderDiv" *ngIf="loading">
+  <img src="../../assets/loader-gif.gif" id="loader" />
+</div>
+<!-- Loading div ends -->
