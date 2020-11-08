@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from "./admin.service";
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, OnDestroy {
 
   // Global variables
   loading: boolean = false;
@@ -26,6 +26,7 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    document.body.style.backgroundImage = "url('../assets/login-gradient.jpg')"
   }
 
   // login method
@@ -59,4 +60,7 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    document.body.style.backgroundImage = "";
+  }
 }

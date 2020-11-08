@@ -13,7 +13,11 @@ const product = new Schema({
         type: Number,
         required: true
     },
-    outOfStock: {
+    actualPrice: {
+        type: Number,
+        required: true
+    },
+    productStock: {
         type: Boolean,
         required: true,
         default: false
@@ -23,10 +27,6 @@ const product = new Schema({
     },
     location: {
         type: String
-    },
-    actualPrice: {
-        type: Number,
-        required: true
     },
     productUrls: {
         type: Array,
