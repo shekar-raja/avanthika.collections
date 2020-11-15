@@ -53,7 +53,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   enableLoginButton() {
-    if ((this.loginForm.controls.username.value !== "") && (this.loginForm.controls.password.value !== "")) {
+    if (!!(this.loginForm.controls.username.value.length) && (this.loginForm.controls.password.value.length)) {
       this.enableLogin = true;
     } else {
       this.enableLogin = false;
